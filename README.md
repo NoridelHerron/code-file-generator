@@ -14,16 +14,12 @@ An interactive Python utility for generating **C, C++, and Python** source and h
 
 ## Supported File Types
 .c, .h, .cpp, .hpp, .py
----
 
 ## How to use
-Run the generator from a terminal in the project directory:
-**python gen_file.py**
+Run the generator from a terminal in the project directory: **python gen_file.py**
 Follow the interactive prompts to select the file type, file name, and optional author name.
----
 
-Version: v1.0 Date: 2026-01-06
----
 
 **Author:** Noridel Herron
 **Email:**  github@noridel.com
+Version: v1.0 Date: 2026-01-06
