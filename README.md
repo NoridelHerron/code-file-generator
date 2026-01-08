@@ -6,7 +6,8 @@ This repository contains a set of **interactive Python utilities** for generatin
 The tools are designed to reduce repetitive setup work while enforcing clean, conservative defaults suitable for **general programming, RTL design, and verification workflows**.
 
 ## What's Included
-1. **Code File Generator** (gen_file.py)
+**Code File Generator** (gen_file.py)
+
 Generates standard source and header files for general-purpose programming.
 
 **Supported Languages**
@@ -22,7 +23,8 @@ Generates standard source and header files for general-purpose programming.
 - Minimal main() stubs for source files
 - No external dependencies
 
-2. **HDL Generator** (hdl_genFile.py)
+**HDL Generator** (hdl_genFile.py)
+
 Generates **intent-driven HDL templates** for digital design work.
 
 **Supported HDLs**:
@@ -44,6 +46,7 @@ Generates **intent-driven HDL templates** for digital design work.
 
 ## How to use
 **Generate C / C++ / Python Files**
+
 Run: **python gen_file.py**
 
 You will be prompted to: 
@@ -52,6 +55,7 @@ You will be prompted to:
 3. Optionally enter an author name
 
 **Generate HDL Files**
+
 Run: **python hdl_genFile.py**
 
 You will be prompted to:
@@ -61,6 +65,7 @@ You will be prompted to:
 4. Optionally enter an author name
 
 All generated file will be created with the appropriate extension.
+All generated files are stored in the **hdl_generated_files** directory.
 
 ## Design Philosophy
 Both generators follow the same core principles:

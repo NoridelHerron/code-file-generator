@@ -98,7 +98,7 @@ def generate_file(filename, author=""):
 # Interactive entry point
 # ============================================================
 def main():
-    print("=== Code File Generator v1.0.2 ===")
+    print("=== Code File Generator ===")
     print("Supported types: .c .h .cpp .hpp .py")
 
     file_type = input("Enter file type: ").strip()

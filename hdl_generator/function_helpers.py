@@ -86,24 +86,24 @@ def Print_Seq_Body(hdl_type):
         
     elif hdl_type == "sv":
         result = """
-    always_ff @(posedge clk or posedge rst) begin
-        if (rst) begin
-            // reset logic
-        end else begin
-            // logic here
-        end
+always_ff @(posedge clk or posedge rst) begin
+    if (rst) begin
+        // reset logic
+    end else begin
+        // logic here
     end
+end
     """
     
     else:
         result = """
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
-            // reset logic
-        end else begin
-            // logic here
-        end
+always @(posedge clk or posedge rst) begin
+    if (rst) begin
+        // reset logic
+    end else begin
+        // logic here
     end
+end
     """  
     return result
 
@@ -122,17 +122,17 @@ def Print_Comb_Body(hdl_type):
         
     elif hdl_type == "sv":
         result = """
-    always_comb begin
-        // logic here
-    end
+always_comb begin
+    // logic here
+end
     """
     
     else:
         result = """
-    always @(*) begin
-        // logic here
-    end
-    """  
+always @(*) begin
+    // logic here
+end
+"""  
     return result
 
 # ==============================================================================
