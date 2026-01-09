@@ -6,49 +6,12 @@
 # Date  : 2026-01-06 23:13:23
 # ============================================================
 
-from datetime import datetime
-
-# ==============================================================================
-def Get_time_and_date():
-    return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-# ==============================================================================
-def Print_Sep():
-    return "=" * 59
-
-# ==============================================================================
-def Get_author_name(author="", comment=""):
-    return (
-        f"Author      : {author}"
-        if author else
-        f"Author      :"
-    )
-
-# ==============================================================================
-def Print_Header(entity_name, author, hdl_type, file_ext):
-    timestamp = Get_time_and_date()
-    sep       = Print_Sep()
-    comment   = "--" if hdl_type == "vhdl" else "//"
-    header    = f"""{comment} {sep}
-{comment} Project Name: 
-{comment} Description :
-{comment}
-{comment} File Name   : {entity_name}.{file_ext}
-{comment} Dependencies:
-{comment} {author}
-{comment} Date        : {timestamp}
-{comment} {sep}"""
-
-    return header
-
-# ==============================================================================
-def Print_Port_comments(hdl_type):
-    if hdl_type == "vhdl":
+def Print_Port_comments(ext):
+    if ext == "vhdl":
         result = """
         -- User/s
         -- add ports here
-        """
-        
+        """ 
     else:
         result = """
         // User/s
@@ -57,8 +20,10 @@ def Print_Port_comments(hdl_type):
     return result
 
 # ==============================================================================
-def Print_Seq_Port(hdl_type):
-    if hdl_type == "vhdl":
+# ==============================================================================
+
+def Print_Seq_Port(ext):
+    if ext == "vhdl":
         result = """
         clk : in std_logic;
         rst : in std_logic
@@ -67,12 +32,14 @@ def Print_Seq_Port(hdl_type):
         result = """
     input clk,
     input rst
-"""
+    """
     return result
 
 # ==============================================================================
-def Print_Seq_Body(hdl_type):
-    if hdl_type == "vhdl":
+# ==============================================================================
+
+def Print_Seq_Body(ext):
+    if ext == "vhdl":
         result = """
     process(clk, rst)
     begin
@@ -82,9 +49,8 @@ def Print_Seq_Body(hdl_type):
             -- logic here
         end if;
     end process;
-    """
-        
-    elif hdl_type == "sv":
+    """      
+    elif ext == ".sv":
         result = """
 always_ff @(posedge clk or posedge rst) begin
     if (rst) begin
@@ -93,8 +59,7 @@ always_ff @(posedge clk or posedge rst) begin
         // logic here
     end
 end
-    """
-    
+    """   
     else:
         result = """
 always @(posedge clk or posedge rst) begin
@@ -108,8 +73,10 @@ end
     return result
 
 # ==============================================================================
-def Print_Comb_Body(hdl_type):
-    if hdl_type == "vhdl":
+# ==============================================================================
+
+def Print_Comb_Body(ext):
+    if ext == "vhdl":
         result = """
     -- Combinational logic
     -- If only simple concurrent assignments are needed,
@@ -118,15 +85,13 @@ def Print_Comb_Body(hdl_type):
     begin
         -- logic here
     end process;
-    """ 
-        
-    elif hdl_type == "sv":
+    """   
+    elif ext == ".sv":
         result = """
 always_comb begin
     // logic here
 end
-    """
-    
+    """  
     else:
         result = """
 always @(*) begin
@@ -136,29 +101,29 @@ end
     return result
 
 # ==============================================================================
-def Print_Package_Body(package_name, hdl_type):
-    if hdl_type == "vhdl":
+# ==============================================================================
+def Print_Package_Body(package_name, ext):
+    if ext == ".vhd":
         result = f"""
-package {package_name}_pkg is
+package {package_name} is
 
     -- constants
     -- types
     -- subtypes
     -- function/procedure declarations
 
-end package {package_name}_pkg;
+end package {package_name};
 
-package body {package_name}_pkg is
+package body {package_name} is
 
     -- function/procedure implementations
 
-end package body {package_name}_pkg;
-"""
-    
-    elif hdl_type == "sv":
+end package body {package_name};
+""" 
+    elif ext == ".svh":
         result = f"""
 
-package {package_name}_pkg;
+package {package_name};
 
     // parameters
     // typedefs
@@ -170,8 +135,8 @@ endpackage
     else:
         result = f"""
 
-`ifndef {package_name.upper()}_PKG_VH
-`define {package_name.upper()}_PKG_VH
+`ifndef {package_name.upper()}_VH
+`define {package_name.upper()}_VH
 
 // parameters
 // `define MACROS
@@ -180,7 +145,3 @@ endpackage
 `endif
 """
     return result
-# ==============================================================================
-
-
-
