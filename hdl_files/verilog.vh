@@ -3,18 +3,18 @@
 // Project Name: 
 // Description :
 //
-// File Name   : svh_pkg.svh
+// File Name   : verilog.vh
 // Dependencies:
-// Author      : Nori
-// Date        : 2026-01-09 21:10:58
+// Author      : sdfkjjs
+// Date        : 2026-01-10 09:26:00
 // ============================================================
 
-package svh_pkg;
+`ifndef VERILOG_VH
+`define VERILOG_VH
 
-    // parameters
-    // typedefs
-    // localparams
-    // functions
+// parameters
+// `define MACROS
+// localparams
 
-endpackage
+`endif
 

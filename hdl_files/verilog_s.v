@@ -1,15 +1,16 @@
 
-// ===========================================================
+// ============================================================
 // Project Name: 
 // Description :
 //
-// File Name   : vs.v
+// File Name   : verilog_s.v
 // Dependencies:
-// Author      : skjdjkf
-// Date        : 2026-01-09 10:47:02
-// ===========================================================
+// Author      : Noridel
+// Date        : 2026-01-09 22:10:42
+// ============================================================
+`timescale 1ns / 1ps
 
-module vs (
+module verilog_s (
     
     input clk,
     input rst
@@ -17,7 +18,6 @@ module vs (
 );
 
 // Add wire or reg here
-
 
 always @(posedge clk or posedge rst) begin
     if (rst) begin

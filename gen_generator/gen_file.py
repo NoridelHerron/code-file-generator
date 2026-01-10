@@ -1,12 +1,13 @@
 # ============================================================
-# gen_file.py
-# Description:
+# Project name: File Generator
+# Description :
 #   Interactive code file generator for C, C++, and Python.
 #   Generates source and header files with consistent banners,
 #   include guards (for headers), and minimal main stubs.
-#
-# Author : Noridel Herron
-# Date   : 2026-01-06
+# File name   : gen_file.py
+# Dependencies:
+# Author      : Noridel Herron
+# Date        : 2026-01-06
 # ============================================================
 
 from utilities.shared_helpers import (Print_Header, Get_Comment,  

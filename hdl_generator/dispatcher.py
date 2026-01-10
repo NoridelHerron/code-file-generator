@@ -35,9 +35,9 @@ def generate_hdl_content(file_type, name, unit_type, author):
     if file_type == ".vhd":
         if unit_type == "pkg":
             return vhdl_package_template(
-                package_name=name,
-                ext=file_type,
-                author=author,
+                package_name = name,
+                ext          = file_type,
+                author       = author,
             )
         else:
             return vhdl_entity_template(

@@ -102,7 +102,7 @@ end
 
 # ==============================================================================
 # ==============================================================================
-def Print_Package_Body(package_name, ext):
+def Print_Package_Body(package_name, ext, sep):
     if ext == ".vhd":
         result = f"""
 package {package_name} is
@@ -123,7 +123,7 @@ end package body {package_name};
     elif ext == ".svh":
         result = f"""
 
-package {package_name};
+package {package_name}_pkg;
 
     // parameters
     // typedefs
@@ -131,6 +131,10 @@ package {package_name};
     // functions
 
 endpackage
+
+{sep}
+// End of File
+{sep}
 """
     else:
         result = f"""

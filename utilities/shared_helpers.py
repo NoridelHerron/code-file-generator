@@ -54,26 +54,6 @@ def Get_Comment(ext):
     return result
     # ************
 
-# ==============================================================
-
-def Get_Extension(lang="", is_pkg=""):
-    
-    if lang == "vhdl":
-        result = ".vhd"
-    elif lang == "sv":
-        if is_pkg == "pkg":
-            result = ".svh"
-        else:
-            result = ".sv"
-    else:
-        if is_pkg == "pkg":
-            result = ".vh"
-        else:
-            result = ".v"
-    # ************
-    return result
-    # ************
-
 # ===============================================================
 
 def header_guard(guard):
@@ -162,7 +142,6 @@ def Add_Function(num, comment):
     # ************
     return result
     # ************
-
 
 def Get_File_Info(is_hdl: bool):
     """

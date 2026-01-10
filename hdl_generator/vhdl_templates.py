@@ -8,8 +8,10 @@
 # ============================================================
 
 from .function_helpers import (Print_Seq_Port, Print_Seq_Body,  
-                              Print_Comb_Body, Print_Port_comments)
-from .vhdl_helpers import ( Get_Complete_VHDL, Get_Package_VHDL)
+                              Print_Comb_Body, Print_Port_comments,
+                              Print_Package_Body)
+from .vhdl_helpers import ( Get_Complete_VHDL, Print_Lib)
+from utilities.shared_helpers import Print_Header, Print_Sep
 
 # ================================================================
 # Functions only
@@ -33,10 +35,17 @@ def vhdl_entity_template(entity_name, author="", is_sequential=True):
 # ================================================================
 # Generate VHDL package template
 def vhdl_package_template(package_name, ext, author):
-    result = Get_Package_VHDL(package_name, ext, author) 
-    # ************
-    return result
-    # ************
+    lib      = Print_Lib()
+    header   = Print_Header(package_name + "_pkg", author, "--",  ext)
+    sep      = Print_Sep()
+    body     = Print_Package_Body(package_name + "_pkg", ext, sep) 
+    complete = f"""
+{header}
+{lib}{body}
+"""
+    # **************
+    return complete
+    # ************** 
 
 # ================================================================
 # END OF FILE

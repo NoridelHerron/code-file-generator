@@ -22,10 +22,16 @@ def ask_hdl_unit_type(ext):
     """
     if ext in [".vhd", ".v", ".sv"]:
         while True:
-            choice = input(
-                "Select HDL unit type "
-                "(c = combinational, s = sequential, p = package): "
-            ).strip().lower()
+            if ext == ".vhd":
+                choice = input(
+                    "Select HDL unit type "
+                    "(c = combinational, s = sequential, p = package): "
+                ).strip().lower()
+            else:
+                choice = input(
+                    "Select HDL unit type "
+                    "(c = combinational, s = sequential): "
+                ).strip().lower()
 
             if choice in ["c", "comb", "combinational"]:
                 result = "comb"
@@ -34,13 +40,20 @@ def ask_hdl_unit_type(ext):
             elif choice in ["p", "pkg", "package"]:
                 result = "pkg"
             else:
-                print(
-                    "Invalid input. Please enter "
-                    "'c' (combinational), 's' (sequential), or 'p' (package)."
-                )
-    # ************
-    return result
-    # ************
+                if ext == ".vhd":
+                    print(
+                        "Invalid input. Please enter "
+                        "'c' (combinational), 's' (sequential), or 'p' (package)."
+                    )
+                else:
+                    print(
+                        "Invalid input. Please enter "
+                        "'c' (combinational) or 's' (sequential)"
+                    )
+
+            # ************
+            return result
+            # ************
 
 # ===============================================================
 # Main
