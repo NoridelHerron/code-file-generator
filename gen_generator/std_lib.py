@@ -1,6 +1,6 @@
 
 ## ===========================================================
-## Project Name: 
+## Project Name: File Generator
 ## Description :
 ##
 ## File Name   : std_lib.py
@@ -14,7 +14,7 @@
 # ============================================================
 
 def Standard_Lib(ext):
-    if ext == ".c":
+    if ext in [".c", ".h"]:
         lib = """
 // C STANDARD LIBRARY
 #include <stdio.h>    // printf, scanf, file I/O
@@ -32,7 +32,7 @@ def Standard_Lib(ext):
 #include <ctype.h>
 """
     # *****************************************
-    elif ext == ".cpp":
+    elif ext in [".cpp", ".hpp"]:
         lib = """
 // C++ STANDARD LIBRARY 
 #include <iostream>    // console I/O

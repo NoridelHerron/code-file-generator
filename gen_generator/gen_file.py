@@ -44,8 +44,9 @@ def main():
     print("Supported types: .c .h .cpp .hpp .py")
 
     file_type, base_name = Get_File_Info(False)
-    author               = ask_author_name()       # Optional author logic 
-    num                  = Get_Separator_Count()   # Number of separator
+    author               = ask_author_name()                 # Optional author logic 
+
+    num = Get_Separator_Count() if file_type == ".py" else 0 # Number of separator
     content              = Get_Content(base_name, file_type, author, num)
 
     # ************************************

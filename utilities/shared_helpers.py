@@ -153,7 +153,9 @@ def Add_Function(num, comment):
     for _ in range(num):
         result += (
             "\ndef Function_Name():\n"
-            "    pass\n\n"
+            "    # *************\n"
+            "    return\n"  
+            "    # *************\n\n"
             f"{comment} {Print_Sep(True)}\n"
         )
 
