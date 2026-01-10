@@ -8,8 +8,14 @@
 # Date  : 2026-01-06 14:56:11
 # ============================================================
 
-from utilities.user_prompt import (ask_author_name, Out_directory)
-from utilities.shared_helpers import (Get_File_Info, save_file)
+from utilities.user_prompt import ( 
+    ask_author_name, 
+    Out_directory )
+
+from utilities.shared_helpers import (
+    Get_File_Info, 
+    save_file )
+
 from .dispatcher import generate_hdl_content
 
 # ============================================================
@@ -69,15 +75,16 @@ def main():
 
     # Generate HDL content
     content = generate_hdl_content(
-            file_type = file_type,
-            name      = module_name,
-            unit_type = unit_type,
-            author    = author
-        )
+                file_type = file_type,
+                name      = module_name,
+                unit_type = unit_type,
+                author    = author )
     
     # Prompt user if the generated file will be stored in folder/root directory
     out_dir = Out_directory()
-    save_file(module_name + file_type, content, out_dir)
+
+    save_file( module_name + file_type, 
+               content, out_dir )
 
 # ================================================================
 # Main

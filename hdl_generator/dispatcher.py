@@ -7,17 +7,22 @@
 # Date  : 2026-01-06 17:18:42
 # ============================================================
 
-from .vhdl_templates import ( vhdl_entity_template,
-                              vhdl_package_template )
+from .vhdl_templates import ( 
+    vhdl_entity_template,
+    vhdl_package_template )
 
-from .verilog_sv_templates import ( verilog_module_template, 
-                                    verilog_package_template)
+from .verilog_sv_templates import ( 
+    verilog_module_template, 
+    verilog_package_template )
 
 # ============================================================
 # Function only
 # ============================================================
 
-def generate_hdl_content(file_type, name, unit_type, author):
+def generate_hdl_content( file_type, 
+                          name, 
+                          unit_type, 
+                          author ):
     """
     Generate HDL source text based on language and unit type.
 
@@ -42,26 +47,24 @@ def generate_hdl_content(file_type, name, unit_type, author):
         else:
             return vhdl_entity_template(
                 entity_name=name,
-                author=author,
-                is_sequential=(unit_type == "seq"),
+                author        = author,
+                is_sequential = (unit_type == "seq"),
             )
 
     # Verilog / SystemVerilog package/include files
     elif file_type in [".vh", ".svh"]:
         return verilog_package_template(
-            package_name=name,
-            author=author,
-            ext=file_type,
-        )
+            package_name = name,
+            author       = author,
+            ext          = file_type )
 
     # Verilog / SystemVerilog modules
     elif file_type in [".v", ".sv"]:
         return verilog_module_template(
-            module_name=name,
-            author=author,
-            ext=file_type,
-            is_sequential=(unit_type == "seq"),
-        )
+            module_name   = name,
+            author        = author,
+            ext           = file_type,
+            is_sequential = (unit_type == "seq") )
 
     # Safety net
     else:

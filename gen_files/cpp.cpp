@@ -5,8 +5,8 @@
 //
 // File Name   : cpp.cpp
 // Dependencies:
-// Author      : Noridel Herron
-// Date        : 2026-01-09 20:28:24
+// Author      : Noridel
+// Date        : 2026-01-10 17:19:12
 // ============================================================
 
 // C++ STANDARD LIBRARY 

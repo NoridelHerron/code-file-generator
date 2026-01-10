@@ -13,8 +13,10 @@
 # Function only
 # ============================================================
 
-def Standard_Lib(ext):
+def Standard_Lib( ext ):
+
     if ext in [".c", ".h"]:
+         
         lib = """
 // C STANDARD LIBRARY
 #include <stdio.h>    // printf, scanf, file I/O
@@ -33,6 +35,7 @@ def Standard_Lib(ext):
 """
     # *****************************************
     elif ext in [".cpp", ".hpp"]:
+
         lib = """
 // C++ STANDARD LIBRARY 
 #include <iostream>    // console I/O
@@ -51,6 +54,7 @@ def Standard_Lib(ext):
 """
     # *********************************************
     elif ext == ".py":
+
         lib = """## Libraries
 import sys
 import pathlib
@@ -60,6 +64,7 @@ import cv2
 """
     else:
         lib = ""
+
     # ************
     return lib
     # ************

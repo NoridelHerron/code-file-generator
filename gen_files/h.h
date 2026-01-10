@@ -5,8 +5,8 @@
 //
 // File Name   : h.h
 // Dependencies:
-// Author      : Noridel Herron
-// Date        : 2026-01-09 20:27:06
+// Author      : Noridel
+// Date        : 2026-01-10 17:19:39
 // ============================================================
 #ifndef H_H
 #define H_H

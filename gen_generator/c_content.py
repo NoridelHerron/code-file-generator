@@ -13,7 +13,9 @@
 ##  Function/s Only
 ## ============================================================
 
-def Print_C_Sources(lib, sep):
+def Print_C_Sources( lib, 
+                     sep ):
+    
     result = f"""{lib}
 int main(void)
 {{
@@ -30,7 +32,9 @@ int main(void)
 
 ## ************************************************************
 
-def Print_C_headers(ext, guard, lib, sep):
+def Print_C_headers( guard, 
+                     lib, 
+                     sep ):
     result = f"""#ifndef {guard}
 #define {guard}
 {lib}

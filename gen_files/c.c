@@ -3,10 +3,10 @@
 // Project Name: 
 // Description :
 //
-// File Name   : c.c
+// File Name   : C.c
 // Dependencies:
-// Author      : Noridel Herron
-// Date        : 2026-01-09 20:26:29
+// Author      : Noridel
+// Date        : 2026-01-10 17:18:41
 // ============================================================
 
 // C STANDARD LIBRARY

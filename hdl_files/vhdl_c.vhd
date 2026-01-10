@@ -4,8 +4,8 @@
 --
 -- File Name   : vhdl_c.vhd
 -- Dependencies:
--- Author      : Noridel Herron
--- Date        : 2026-01-09 22:13:36
+-- Author      : jkasjkd
+-- Date        : 2026-01-10 11:54:18
 -- ============================================================
 
 library ieee;

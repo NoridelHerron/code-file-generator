@@ -5,8 +5,8 @@
 --
 -- File Name   : vhdl_pkg.vhd
 -- Dependencies:
--- Author      : Nnksfljkdkls
--- Date        : 2026-01-10 09:07:06
+-- Author      : jksa
+-- Date        : 2026-01-10 11:55:23
 -- ============================================================
 
 library ieee;
@@ -16,6 +16,7 @@ use ieee.numeric_std.all;
 -- CUSTOMIZED PACKAGE
 -- library work;
 -- use work.xxxxxxx.all;
+
 
 package vhdl_pkg is
 

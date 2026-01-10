@@ -4,8 +4,8 @@
 --
 -- File Name   : vhdl_s.vhd
 -- Dependencies:
--- Author      : Noridel
--- Date        : 2026-01-09 22:14:14
+-- Author      : jksdjk
+-- Date        : 2026-01-10 11:54:49
 -- ============================================================
 
 library ieee;
