@@ -15,49 +15,27 @@ The goal is acceleration without abstraction — you still write the logic, the 
 
 .
 ├── gen_files  
-
 ├── gen_generator/  # C / C++ / Python file generator
-
 │   ├── c_content.py
-
 │   ├── dispatcher.py
-
 │   ├── gen_file.py
-
 │   ├── py_content.py
-
 │   ├── std_lib.py
-
 ├── hdl_files 
-
 └── hdl_generator/  # VHDL / Verilog / SystemVerilog generator
-
 │   ├── dispatcher.py
-
 │   ├── file_content.py
-
 │   ├── function_helper.py
-
 │   ├── hdl_genFile.py
-
 │   ├── verilog_sv_templates
-
 │   ├── vhdl_templates
-
 ├── utilities/      # Shared helpers and user prompts 
-
 │   ├── shared_helpers.py
-
 │   ├── user_prompt.py
-
 │   ├── __init__.py
-
 ├── License
-
 ├── Makefile
-
 ├── Readme.md
-
 ├── run.py
 
 
