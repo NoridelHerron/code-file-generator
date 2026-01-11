@@ -14,29 +14,52 @@ The goal is acceleration without abstraction — you still write the logic, the 
 ## Repository Structure
 
 .
-├── gen_files       
+├── gen_files  
+
 ├── gen_generator/  # C / C++ / Python file generator
+
 │   ├── c_content.py
+
 │   ├── dispatcher.py
+
 │   ├── gen_file.py
+
 │   ├── py_content.py
+
 │   ├── std_lib.py
+
 ├── hdl_files 
+
 └── hdl_generator/  # VHDL / Verilog / SystemVerilog generator
+
 │   ├── dispatcher.py
+
 │   ├── file_content.py
+
 │   ├── function_helper.py
+
 │   ├── hdl_genFile.py
+
 │   ├── verilog_sv_templates
+
 │   ├── vhdl_templates
+
 ├── utilities/      # Shared helpers and user prompts 
+
 │   ├── shared_helpers.py
+
 │   ├── user_prompt.py
+
 │   ├── __init__.py
+
 ├── License
+
 ├── Makefile
+
 ├── Readme.md
+
 ├── run.py
+
 
 Each folder has a single responsibility and no circular dependencies.
 
@@ -136,6 +159,8 @@ Shared helper functions used across all generators.
     - Author confirmation logic
     - Output directory selection
     - Function count prompts
+
+**Note:** I use the gen_files/ and hdl_files/ folders as temporary output targets during testing so generated files don’t mix with the generator’s core code while I iterate and validate behavior.
 
 ## How to use
 **Generate C / C++ / Python Files**
