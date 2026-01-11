@@ -16,23 +16,23 @@ The goal is acceleration without abstraction — you still write the logic, the 
 .
 ├── gen_files       
 ├── gen_generator/  # C / C++ / Python file generator
-    ├── c_content.py
-    ├── dispatcher.py
-    ├── gen_file.py
-    ├── py_content.py
-    ├── std_lib.py
+│   ├── c_content.py
+│   ├── dispatcher.py
+│   ├── gen_file.py
+│   ├── py_content.py
+│   ├── std_lib.py
 ├── hdl_files 
 └── hdl_generator/  # VHDL / Verilog / SystemVerilog generator
-    ├── dispatcher.py
-    ├── file_content.py
-    ├── function_helper.py
-    ├── hdl_genFile.py
-    ├── verilog_sv_templates
-    ├── vhdl_templates
+│   ├── dispatcher.py
+│   ├── file_content.py
+│   ├── function_helper.py
+│   ├── hdl_genFile.py
+│   ├── verilog_sv_templates
+│   ├── vhdl_templates
 ├── utilities/      # Shared helpers and user prompts 
-    ├── shared_helpers.py
-    ├── user_prompt.py
-    ├── __init__.py
+│   ├── shared_helpers.py
+│   ├── user_prompt.py
+│   ├── __init__.py
 ├── License
 ├── Makefile
 ├── Readme.md
@@ -90,7 +90,7 @@ Generates intent-driven HDL templates for RTL design and verification.
 - Packages
     - VHDL packages
     - SystemVerilog
-    - Verilog (include-style packages)
+    - Verilog (include-style package)
 
 **Key Files**
 
@@ -141,7 +141,9 @@ Shared helper functions used across all generators.
 **Generate C / C++ / Python Files**
 
 From root directory
+
 Linux:   **make gen**
+
 Windows: **py run.py gen**
 
 You will be prompted to: 
@@ -151,12 +153,14 @@ You will be prompted to:
 4. Number of Function/s (Python only)
 5. If you want to store it in the folder
     - If yes, it will prompt the path folder 
-    - If no, it goes to the local directory
+    - If no, it goes to the root directory
 
 **Generate HDL Files**
 
 From root directory
+
 Linux:   **make gen**
+
 Windows: **py run.py gen**
 
 You will be prompted to:
@@ -164,11 +168,12 @@ You will be prompted to:
 2. Enter module / entity / package name
 3. Select HDL unit type
     - for vhdl (.vhd), there's 3 options (c = combinational, s = sequential, p = package)
-    - for Verilog and SystemVerilog (c = combinational, s = sequential)
+    - for Verilog (.v) and System Verilog (.sv) (c = combinational, s = sequential)
+    - .vh and .svh 
 4. Optionally enter an author name
 5. If you want to store it in the folder
     - If yes, it will prompt the path folder 
-    - If no, it goes to the local directory
+    - If no, it goes to the root directory
 
 All generated file will be created with the appropriate extension.
 
@@ -183,7 +188,7 @@ These tools are meant to **accelerate setup**, not replace engineering judgment.
 
 ## Why This Exists
 
-I built this for myself to remove structural friction in the low-level work I do across HDL, C/C++, and Python. I was tired of rewriting the same scaffolding and dealing with small inconsistencies, so the generator enforces intent up front and adds clear separators to make section boundaries obvious during navigation and debugging.
+I built this for myself to reduce structural overhead in the low-level work I do across HDL, C/C++, and Python. It enforces intent early and adds clear separators so I can focus on solving real problems instead of repeating setup tasks.
 
 **Author:** Noridel Herron
 
