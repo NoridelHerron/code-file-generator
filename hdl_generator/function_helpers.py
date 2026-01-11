@@ -6,6 +6,12 @@
 # Date  : 2026-01-06 23:13:23
 # ============================================================
 
+from utilities.shared_helpers import (
+    Print_Sep )
+
+# ==============================================================================
+# ==============================================================================
+
 def Print_Port_comments(ext):
     if ext == "vhdl":
         result = """
@@ -52,23 +58,23 @@ def Print_Seq_Body(ext):
     """      
     elif ext == ".sv":
         result = """
-always_ff @(posedge clk or posedge rst) begin
-    if (rst) begin
-        // reset logic
-    end else begin
-        // logic here
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst) begin
+            // reset logic
+        end else begin
+            // logic here
+        end
     end
-end
     """   
     else:
         result = """
-always @(posedge clk or posedge rst) begin
-    if (rst) begin
-        // reset logic
-    end else begin
-        // logic here
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            // reset logic
+        end else begin
+            // logic here
+        end
     end
-end
     """  
     return result
 
@@ -88,21 +94,26 @@ def Print_Comb_Body(ext):
     """   
     elif ext == ".sv":
         result = """
-always_comb begin
-    // logic here
-end
+    always_comb begin
+        // logic here
+    end
     """  
     else:
         result = """
-always @(*) begin
-    // logic here
-end
-"""  
+    always @(*) begin
+        // logic here
+    end
+    """  
     return result
 
 # ==============================================================================
 # ==============================================================================
-def Print_Package_Body(package_name, ext, sep):
+def Print_Package_Body( package_name, 
+                        ext, 
+                        sep ):
+    
+    star = Print_Sep(True)
+    
     if ext == ".vhd":
         result = f"""
 package {package_name} is
@@ -114,11 +125,17 @@ package {package_name} is
 
 end package {package_name};
 
+-- {star}
+
 package body {package_name} is
 
     -- function/procedure implementations
 
 end package body {package_name};
+
+-- {sep}
+-- END OF FILE
+-- {sep}
 """ 
     elif ext == ".svh":
         result = f"""
@@ -132,9 +149,9 @@ package {package_name}_pkg;
 
 endpackage
 
-{sep}
+// {sep}
 // End of File
-{sep}
+// {sep}
 """
     else:
         result = f"""
@@ -147,5 +164,9 @@ endpackage
 // localparams
 
 `endif
+
+// {sep}
+// END OF FILE
+// {sep}
 """
     return result

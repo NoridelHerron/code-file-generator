@@ -3,22 +3,26 @@
 // Project Name: 
 // Description :
 //
-// File Name   : verilog.vh
+// File Name   : sv_c.sv
 // Dependencies:
-// Author      : kjads
-// Date        : 2026-01-10 18:05:51
+// Author      : nsd
+// Date        : 2026-01-10 18:03:16
 // ============================================================
+`timescale 1ns / 1ps
 
-`ifndef VERILOG_VH
-`define VERILOG_VH
+module sv_c (
+    
+        // User/s
+        // I/O
+        
+);
 
-// parameters
-// `define MACROS
-// localparams
+    // Add logic signal/s here
 
-`endif
-
+    always_comb begin
+        // logic here
+    end
+    
 // ============================================================
 // END OF FILE
 // ============================================================
-

@@ -3,10 +3,10 @@
 -- Project Name: 
 -- Description :
 --
--- File Name   : vhdl_pkg.vhd
+-- File Name   : vhdl.vhd
 -- Dependencies:
 -- Author      : jksa
--- Date        : 2026-01-10 11:55:23
+-- Date        : 2026-01-10 17:54:45
 -- ============================================================
 
 library ieee;
@@ -17,7 +17,6 @@ use ieee.numeric_std.all;
 -- library work;
 -- use work.xxxxxxx.all;
 
-
 package vhdl_pkg is
 
     -- constants
@@ -27,9 +26,15 @@ package vhdl_pkg is
 
 end package vhdl_pkg;
 
+-- ****************************************
+
 package body vhdl_pkg is
 
     -- function/procedure implementations
 
 end package body vhdl_pkg;
+
+-- ============================================================
+-- END OF FILE
+-- ============================================================
 

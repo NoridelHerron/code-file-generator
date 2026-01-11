@@ -5,8 +5,8 @@
 //
 // File Name   : verilog_c.v
 // Dependencies:
-// Author      : Nor
-// Date        : 2026-01-09 22:09:21
+// Author      : ksjda
+// Date        : 2026-01-10 17:57:20
 // ============================================================
 `timescale 1ns / 1ps
 
@@ -17,9 +17,12 @@ module verilog_c (
         
 );
 
-// Add wire or reg here
+    // Add wire or reg here
 
-always @(*) begin
-    // logic here
-end
-
+    always @(*) begin
+        // logic here
+    end
+    
+// ============================================================
+// END OF FILE
+// ============================================================

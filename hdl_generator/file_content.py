@@ -9,6 +9,10 @@
 ## Date        : 2026-01-10 09:37:36
 ## ============================================================
 
+from utilities.shared_helpers import (
+    Print_Sep
+)
+
 ## ============================================================
 ##  Function/s Only
 ## ============================================================
@@ -38,12 +42,12 @@ def Get_VHDL_Content( is_package  = False,
                       ports       = "" ):
     
     lib = Print_Lib()
+    sep = Print_Sep()
     
     if is_package:
         complete = f"""
 {header}
-{lib}
-{body}
+{lib}{body}
 """
     # ***********************************
     else: 
@@ -60,6 +64,10 @@ architecture rtl of {entity_name} is
 begin
 {body}
 end rtl;
+
+-- {sep}
+-- END OF FILE
+-- {sep}
 """
     # *************
     return complete
@@ -76,6 +84,7 @@ def Get_Verilog_Content( is_package  = False,
                          note        = ""):
     
     complete = ""
+    sep      = Print_Sep()
 
     if is_package:
         complete = f"""
@@ -91,8 +100,11 @@ module {module_name} (
     {ports}
 );
 
-{note}
+    {note}
 {body}
+// {sep}
+// END OF FILE
+// {sep}
 """ 
        
     # **************

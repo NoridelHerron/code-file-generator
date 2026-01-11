@@ -86,6 +86,7 @@ def verilog_package_template( package_name = "",
                     body        = body,
                     ports       = "", 
                     note        = "" )
+    
     # **************
     return complete
     # **************    

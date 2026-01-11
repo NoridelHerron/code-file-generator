@@ -23,7 +23,7 @@ def Get_time_and_date():
 
 def Print_Sep(star=False):
     if star:
-        result = "*" * 60
+        result = "*" * 40
     else:
         result = "=" * 60
     # ************

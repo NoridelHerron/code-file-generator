@@ -36,14 +36,14 @@ def ask_author_name():
     
 # ================================================================
 
-def Get_Separator_Count():
+def Get_Function_Count():
     """
     Prompt for number of separators.
 
     Returns:
         int: Number of separators (0 if invalid or empty input)
     """
-    num_str = input("Number of separator: ").strip()
+    num_str = input("Number of Function/s: ").strip()
 
     if not num_str.isdigit():
         result = 0

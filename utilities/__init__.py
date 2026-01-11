@@ -20,7 +20,7 @@ from .shared_helpers import (
 
 from .user_prompt import (
     ask_author_name,
-    Get_Separator_Count, 
+    Get_Function_Count, 
     Out_directory,
 )
 
@@ -36,6 +36,6 @@ __all__ = [
     "Get_File_Name",
 
     "ask_author_name",
-    "Get_Separator_Count",
+    "Get_Function_Count",
     "Out_directory"
 ]

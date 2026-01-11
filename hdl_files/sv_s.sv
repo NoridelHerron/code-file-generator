@@ -3,23 +3,23 @@
 // Project Name: 
 // Description :
 //
-// File Name   : verilog_S.v
+// File Name   : sv_s.sv
 // Dependencies:
-// Author      : kjak
-// Date        : 2026-01-10 17:57:47
+// Author      : jklsad
+// Date        : 2026-01-10 18:04:00
 // ============================================================
 `timescale 1ns / 1ps
 
-module verilog_S (
+module sv_s (
     
     input clk,
     input rst
     
 );
 
-    // Add wire or reg here
+    // Add logic signal/s here
 
-    always @(posedge clk or posedge rst) begin
+    always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
             // reset logic
         end else begin

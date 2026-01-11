@@ -19,9 +19,9 @@ from utilities.shared_helpers import (
 from utilities.user_prompt import(
     ask_author_name, 
     Out_directory,
-    Get_Separator_Count )
+    Get_Function_Count )
 
-from .print_main import ( 
+from .dispatcher import ( 
     main_stub )
 
 # ============================================================
@@ -64,7 +64,7 @@ def main():
     file_type, base_name = Get_File_Info( False )
     author               = ask_author_name()                 # Optional author logic 
 
-    num     = Get_Separator_Count() if file_type == ".py" else 0 # Number of separator
+    num     = Get_Function_Count() if file_type == ".py" else 0 # Number of function
     content = Get_Content( 
                 base_name, 
                 file_type, 
