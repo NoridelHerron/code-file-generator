@@ -17,17 +17,17 @@
 # OS detection
 # ------------------------------------------------------------
 ifeq ($(OS),Windows_NT)
-	PYTHON := py
+	PYTHON 	 := py
 	PLATFORM := Windows
 else
-	PYTHON := python3
+	PYTHON 	 := python3
 	PLATFORM := Unix
 endif
 
 # ------------------------------------------------------------
 # Phony targets
 # ------------------------------------------------------------
-.PHONY: help info hdl gen run-hdl run-gen
+.PHONY: help info hdl gen emb run-hdl run-gen run-emb
 
 # ------------------------------------------------------------
 # Help target
@@ -41,6 +41,7 @@ help:
 	@echo ""
 	@echo "  make hdl        Run HDL generator"
 	@echo "  make gen        Run general generator"
+	@echo "  make emb        Run embedded generator"
 	@echo "  make info       Show environment info"
 	@echo "  make help       Show this help"
 	@echo ""
@@ -49,6 +50,7 @@ help:
 	@echo "  - Or use PowerShell:"
 	@echo "      py run.py hdl"
 	@echo "      py run.py gen"
+	@echo "      py run.py emb"
 	@echo ""
 
 # ------------------------------------------------------------
@@ -68,8 +70,12 @@ run-hdl:
 run-gen:
 	$(PYTHON) -m gen_generator.gen_file
 
+run-emb:
+	$(PYTHON) -m embedded_generator.embedded_genFile
+
 # ------------------------------------------------------------
 # Short aliases
 # ------------------------------------------------------------
 hdl: run-hdl
 gen: run-gen
+emb: run-emb
