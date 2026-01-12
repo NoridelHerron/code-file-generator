@@ -2,17 +2,17 @@
 // Project Name: 
 // Description :
 //
-// File Name   : test3.c
+// File Name   : led.c
 // Dependencies:
-// Author      : nds
-// Date        : 2026-01-11 16:18:29
+// Author      : Noridel
+// Date        : 2026-01-12 10:52:45
 // ============================================================
 
 #include <pthread.h>
 #include <unistd.h>
 #include <stdio.h>
 
-void* test3_thread(void *arg)
+void* led_thread(void *arg)
 {
     (void)arg;
 

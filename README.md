@@ -145,9 +145,9 @@ Shared helper functions used across all generators.
 
 From root directory
 
-Linux:   **make gen**
+    Linux:   **make gen**
 
-Windows: **py run.py gen**
+    Windows: **py run.py gen**
 
 You will be prompted to: 
 1. Enter file type
@@ -162,9 +162,9 @@ You will be prompted to:
 
 From root directory
 
-Linux:   **make gen**
+    Linux:   **make gen**
 
-Windows: **py run.py gen**
+    Windows: **py run.py gen**
 
 You will be prompted to:
 1. Enter file type

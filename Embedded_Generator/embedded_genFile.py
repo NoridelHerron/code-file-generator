@@ -30,6 +30,10 @@ from .thread_content import (
     Thread_FileContent,
 )
 
+from .header import (
+    Thread_HeaderFile
+)
+
 ## ============================================================
 ##  Function
 ## ============================================================
@@ -67,7 +71,18 @@ def main():
 
             # Unique file per thread (prevents overwriting)
             file_name = f"{name}_thread.c"
-            save_file(file_name, content, folder_name)
+
+            save_file( file_name, 
+                       content, 
+                       folder_name )
+
+        file_h = Thread_HeaderFile( 
+                    purpose, 
+                    "threads",
+                    author,
+                    thread_names )
+        
+        save_file( "threads.h", file_h, folder_name)
 
     else:
         thread_names = []
