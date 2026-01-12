@@ -21,8 +21,7 @@ from utilities.user_prompt import(
     Out_directory,
     Get_Function_Count )
 
-from .dispatcher import ( 
-    main_stub )
+from .dispatcher import main_stub 
 
 # ============================================================
 # Functions

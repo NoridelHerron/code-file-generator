@@ -48,9 +48,9 @@ def Decode_Purpose(purpose_code):
         purpose     = "m1"
         num_threads = int(code[2:])
 
-    elif code == "m2":
+    elif code.startswith("m2"):
         purpose     = "m2"
-        num_threads = 0
+        num_threads = int(code[2:])
 
     elif code.startswith("t"):
         purpose     = "t"

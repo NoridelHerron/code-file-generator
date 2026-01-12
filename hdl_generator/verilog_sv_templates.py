@@ -19,9 +19,7 @@ from utilities.shared_helpers import (
     Print_Header, 
     Print_Sep )
 
-from .file_content import (
-    Get_Verilog_Content
-)
+from .file_content import Get_Verilog_Content
 
 # ============================================================
 # Functions Only

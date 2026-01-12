@@ -62,6 +62,14 @@ import time
 import numpy as np
 import cv2
 """
+
+    elif ext in ("m1", "m2", "t"):
+        lib = """
+#include <stdio.h>
+#include <stdint.h>
+#include <unistd.h>
+#include <pthread.h>
+"""
     else:
         lib = ""
 

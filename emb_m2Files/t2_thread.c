@@ -2,10 +2,10 @@
 // Project Name: 
 // Description :
 //
-// File Name   : save_thread.c
+// File Name   : t2_thread.c
 // Dependencies:
-// Author      : Noridel
-// Date        : 2026-01-12 14:54:53
+// Author      : Nori
+// Date        : 2026-01-12 14:59:35
 // ============================================================
 
 #include <stdio.h>
@@ -13,7 +13,7 @@
 #include <unistd.h>
 #include <pthread.h>
 
-void* save_thread(void *arg)
+void* t2_thread(void *arg)
 {
     (void)arg;
 

@@ -14,8 +14,7 @@ from .function_helpers import (
     Print_Port_comments,
     Print_Package_Body )
 
-from .file_content import ( 
-    Get_VHDL_Content )
+from .file_content import Get_VHDL_Content 
 
 from utilities.shared_helpers import ( 
     Print_Header, 

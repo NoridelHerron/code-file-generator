@@ -2,17 +2,18 @@
 // Project Name: 
 // Description :
 //
-// File Name   : function.c
+// File Name   : test3_thread.c
 // Dependencies:
 // Author      : Noridel
-// Date        : 2026-01-12 10:52:45
+// Date        : 2026-01-12 14:58:56
 // ============================================================
 
-#include <pthread.h>
-#include <unistd.h>
 #include <stdio.h>
+#include <stdint.h>
+#include <unistd.h>
+#include <pthread.h>
 
-void* function_thread(void *arg)
+void* test3_thread(void *arg)
 {
     (void)arg;
 

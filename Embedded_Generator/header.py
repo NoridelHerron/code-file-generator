@@ -18,8 +18,7 @@ from utilities.shared_helpers import (
 ##  Function/s Only
 ## ============================================================
 
-def Thread_HeaderFile( opt, 
-                       file_name,
+def Thread_HeaderFile( file_name,
                        author,
                        thread_names ):
     
@@ -36,8 +35,8 @@ def Thread_HeaderFile( opt,
                         for name in thread_names
                     )
     
-    if opt == "t":
-        result = f"""
+    
+    result = f"""
 {header}
 
 #ifndef {file_name.upper()}_H
@@ -51,16 +50,6 @@ def Thread_HeaderFile( opt,
 //  End of File
 // {sep}
 """
-    else:
-        result = ""
-
-    # *************
-    return result
-    # *************
-
-def Header_Content(opt):
-    
-    result = ""
 
     # *************
     return result

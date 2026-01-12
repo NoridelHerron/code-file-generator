@@ -9,30 +9,19 @@
 ## Date        : 2026-01-11 11:29:00
 ## ============================================================
 
-from utilities.shared_helpers import (
-    save_file,
-)
-
 from utilities.user_prompt import (
     ask_author_name,
     Out_directory
 )
 
-from .user_prompts import (
-    Get_Purpose,
-    Get_Thread_Names )
-
-from .helper_functions import (
-    Decode_Purpose
+from utilities.shared_helpers import (
+    save_file
 )
 
-from .thread_content import (
-    Thread_FileContent,
-)
-
-from .header import (
-    Thread_HeaderFile
-)
+from .thread_content import Thread_Info
+from .user_prompts import Get_Purpose
+from .helper_functions import Decode_Purpose
+from .m1_process import Process_FileContent
 
 ## ============================================================
 ##  Function
@@ -52,46 +41,43 @@ def main():
     purpose_code         = Get_Purpose()
     purpose, num_threads = Decode_Purpose(purpose_code)
 
-    # =========================================================
-    # Collect thread names if applicable
-    # =========================================================
-
-    if num_threads > 0:
-        thread_names = Get_Thread_Names(num_threads)
-
-        # =====================================================
-        # Generate one output file per thread name
-        # =====================================================
-
-        for name in thread_names:
-            content  = Thread_FileContent(
-                            fileName = name,
-                            fileType = purpose,
-                            author   = author )
-
-            # Unique file per thread (prevents overwriting)
-            file_name = f"{name}_thread.c"
-
-            save_file( file_name, 
-                       content, 
-                       folder_name )
-
-        file_h = Thread_HeaderFile( 
-                    purpose, 
-                    "threads",
-                    author,
-                    thread_names )
+    if purpose == "t" or ((purpose == "m1" or purpose == "m2") and num_threads > 0):
+        # =========================================================
+        # Save one output file per thread name + .h with all 
+        # the thread names
+        # =========================================================
+        thread_names = Thread_Info( 
+                            author,
+                            folder_name,
+                            purpose,
+                            num_threads )
         
-        save_file( "threads.h", file_h, folder_name)
+        # =========================================================
+        # Save .c file if m1 or m2
+        # =========================================================
+        if purpose == "m1":
+            process1 = Process_FileContent( 
+                            "process1",
+                            author,
+                            purpose,
+                            thread_names )
 
-    else:
-        thread_names = []
+            save_file( "process1" + ".c", process1, folder_name)
 
+        elif purpose == "m2":
+            process2 = Process_FileContent( 
+                            "process2",
+                            author,
+                            purpose,
+                            thread_names )
+
+            save_file( "process2" + ".c", process2, folder_name)
+                
     
-
-    # ============================================================
-    # Switch-style dispatch
-    # ============================================================
+                
+        
+    
+    
 
     # ============================================================
     # Done

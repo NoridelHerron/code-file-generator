@@ -1,32 +1,23 @@
+
 // ============================================================
 // Project Name: 
 // Description :
 //
-// File Name   : save_thread.c
+// File Name   : threads.h
 // Dependencies:
 // Author      : Noridel
-// Date        : 2026-01-12 14:54:53
+// Date        : 2026-01-12 14:58:56
 // ============================================================
 
-#include <stdio.h>
-#include <stdint.h>
-#include <unistd.h>
-#include <pthread.h>
+#ifndef THREADS_H
+#define THREADS_H
 
-void* save_thread(void *arg)
-{
-    (void)arg;
+	void* test1_thread(void *arg);
+	void* test2_thread(void *arg);
+	void* test3_thread(void *arg);
 
-    // 
-    for (;;) {
-        sleep(1);
-    }
-    return NULL;
-}
+#endif /* THREADS_H */
 
 // ============================================================
-// END OF FILE
+//  End of File
 // ============================================================
-    
-
-    

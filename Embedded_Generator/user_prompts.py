@@ -50,7 +50,7 @@ def Get_Purpose():
         # =========================================================
         # Purposes that require a thread count
         # =========================================================
-        if purpose in ["m1", "t"]:
+        if purpose in ["m1", "m2", "t"]:
             num_thread = input(
                 "Enter number of thread(s): "
             ).strip()
@@ -66,7 +66,7 @@ def Get_Purpose():
         # =========================================================
         # Purposes without thread counts
         # =========================================================
-        elif purpose in ["m2", "ipc"]:
+        elif purpose == "ipc":
 
             # *************
             return purpose

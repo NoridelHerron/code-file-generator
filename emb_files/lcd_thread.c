@@ -2,15 +2,16 @@
 // Project Name: 
 // Description :
 //
-// File Name   : lcd.c
+// File Name   : lcd_thread.c
 // Dependencies:
 // Author      : Noridel
-// Date        : 2026-01-12 10:52:45
+// Date        : 2026-01-12 14:54:53
 // ============================================================
 
-#include <pthread.h>
-#include <unistd.h>
 #include <stdio.h>
+#include <stdint.h>
+#include <unistd.h>
+#include <pthread.h>
 
 void* lcd_thread(void *arg)
 {

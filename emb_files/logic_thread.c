@@ -2,15 +2,16 @@
 // Project Name: 
 // Description :
 //
-// File Name   : logic.c
+// File Name   : logic_thread.c
 // Dependencies:
 // Author      : Noridel
-// Date        : 2026-01-12 10:52:45
+// Date        : 2026-01-12 14:54:53
 // ============================================================
 
-#include <pthread.h>
-#include <unistd.h>
 #include <stdio.h>
+#include <stdint.h>
+#include <unistd.h>
+#include <pthread.h>
 
 void* logic_thread(void *arg)
 {
