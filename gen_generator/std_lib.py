@@ -52,7 +52,7 @@ def Standard_Lib( ext ):
 #include <fstream>
 #include <sstream>
 """
-    # *********************************************
+    # ******************************************
     elif ext == ".py":
 
         lib = """## Libraries
@@ -62,12 +62,33 @@ import time
 import numpy as np
 import cv2
 """
-
+    # ******************************************
     elif ext in ("m1", "m2", "t"):
         lib = """
 #include <stdio.h>
 #include <stdint.h>
 #include <unistd.h>
+#include <pthread.h>
+"""
+    # ******************************************
+    elif ext == "ipc":
+        lib = """
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <semaphore.h>
+#include <pthread.h>
+
+#include "ipc_pkg.h"
+"""
+    # ******************************************
+
+    elif ext == "ipc_pkg": 
+        lib = """
+#include <stdint.h>
 #include <pthread.h>
 """
     else:

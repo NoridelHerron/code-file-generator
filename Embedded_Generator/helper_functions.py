@@ -56,7 +56,7 @@ def Decode_Purpose(purpose_code):
         purpose     = "t"
         num_threads = int(code[1:])
 
-    elif code == "ipc":
+    elif code in ("ipc"):
         purpose     = "ipc"
         num_threads = 0
 

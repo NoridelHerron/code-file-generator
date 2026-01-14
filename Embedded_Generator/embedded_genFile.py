@@ -14,14 +14,17 @@ from utilities.user_prompt import (
     Out_directory
 )
 
-from utilities.shared_helpers import (
-    save_file
+from .ipc_content import (
+    IPC_FileContent, 
+    IPC_packageContent
 )
 
-from .thread_content import Thread_Info
-from .user_prompts import Get_Purpose
-from .helper_functions import Decode_Purpose
-from .m1_process import Process_FileContent
+from .header                  import IPC_Header_FileContent
+from utilities.shared_helpers import save_file
+from .thread_content          import Thread_Info
+from .user_prompts            import Get_Purpose    
+from .helper_functions        import Decode_Purpose
+from .m1_process              import Process_FileContent
 
 ## ============================================================
 ##  Function
@@ -72,12 +75,53 @@ def main():
                             thread_names )
 
             save_file( "process2" + ".c", process2, folder_name)
-                
     
+    elif purpose == "ipc":
                 
+        shm_name     = input( "Enter shared memory / semaphore name: " ).strip()
+        packet_type  = input( "Enter shared packet type (struct type name | name_packet_t): " ).strip()
+        magic_define = input( "Enter shared memory magic macro: " ).strip().upper()
+        mem_addr     = input( "Enter memory address (0x46494F4E): " ).strip()
+
+        # remove leading slash if present
+        if shm_name.startswith("/"):
+            shm_name = shm_name[1:]
+
+        # normalize base name
+        if shm_name.endswith("_shm"):
+            base = shm_name[:-4]
+        else:
+            base = shm_name
+
+        shm_name = base + "_shm"
+        sem_name = base + "_sem"
+
+        if not packet_type.endswith("_t"):
+            packet_type += "_t"
+
+        ipc_h = IPC_Header_FileContent( 
+                            "ipc", 
+                            author,
+                            packet_type )  
+
+        content = IPC_FileContent(
+                        purpose,
+                        author,
+                        shm_name,
+                        sem_name,
+                        packet_type,
+                        magic_define
+                    )
         
-    
-    
+        ipc_pkg = IPC_packageContent( "ipc_pkg", 
+                        author,
+                        packet_type, 
+                        magic_define,
+                        mem_addr)
+
+        save_file( "ipc" + ".h", ipc_h, folder_name)
+        save_file( "ipc_pkg" + ".h", ipc_pkg, folder_name)
+        save_file( "ipc" + ".c", content, folder_name)
 
     # ============================================================
     # Done

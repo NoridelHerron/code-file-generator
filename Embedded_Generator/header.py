@@ -55,6 +55,57 @@ def Thread_HeaderFile( file_name,
     return result
     # *************
 
+## ****************************************
+
+def IPC_Header_FileContent(
+        file_name,
+        author,
+        packet_type
+    ):
+
+    header = Print_Header(
+                file_name,
+                author,
+                "//",
+                ".h"
+            )
+
+    sep = Print_Sep()
+
+    # Remove "_t" to get struct tag
+    struct_tag = packet_type[:-2]
+
+    result = f"""
+{header}
+
+#ifndef IPC_INTERFACE_H
+#define IPC_INTERFACE_H
+
+#include "ipc_pkg.h"
+
+/* Initialize shared memory and synchronization primitives */
+int  ipc_init(void);
+
+/* Release IPC resources */
+void ipc_cleanup(void);
+
+/* Write latest packet into shared memory */
+void ipc_send_packet(const {packet_type} *pkt);
+
+/* Read latest packet from shared memory */
+int  ipc_receive_packet({packet_type} *pkt);
+
+#endif /* IPC_INTERFACE_H */
+
+// {sep}
+// End of File
+// {sep}
+"""
+    # *************
+    return result
+    # *************
+
+
 ## ============================================================
 ##  End of File
 ## ============================================================
